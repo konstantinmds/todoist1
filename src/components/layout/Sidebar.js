@@ -6,6 +6,7 @@ import {
   FaRegCalendar,
   FaRegCalendarAlt} from 'react-icons/fa'
 import { Projects } from '../Projects';
+import { AddProject } from '../AddProject';
 
 export const Sidebar = () => {
 
@@ -17,7 +18,8 @@ export const Sidebar = () => {
     return (
         <div className="sidebar" data-testid="sidebar">
           <ul className="sidebar__generic">
-            <li data-testid="inbox" className="inbox">
+            <li 
+            data-testid="inbox" className="inbox">
               <span>
                 <FaInbox />
               </span>
@@ -46,6 +48,7 @@ export const Sidebar = () => {
             <ul className="sidebar__projects">
               { showProjects && <Projects />}
             </ul>
+            { showProjects && <AddProject /> }
         </div>
     )
 }

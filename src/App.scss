@@ -39,12 +39,12 @@
      ============================================ */
    @mixin box-overlay() {
      -webkit-box-shadow: $generic-box-shadow;
-             box-shadow: $generic-box-shadow;
-     position: absolute;
-     width: 100%;
-     z-index: 1;
-     top: 85px;
-     border-radius: 3px;
+        box-shadow: $generic-box-shadow;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      top: 85px;
+      border-radius: 3px;
    }
    
    @mixin va($va-align: center) {
@@ -423,3 +423,53 @@
      }
    }
    
+   /* show confirm delete
+   ============================================================= */
+
+   .project-delete-modal {
+        position: fixed;
+
+
+      &__inner {
+        @include box-overlay();
+        z-index: 99;
+        width: 200px !important;
+        top: 30px !important;
+        right: 0px;
+        background-color: #f0f0f0;
+        padding-left: 100px;
+        padding-right: 200px;
+        display: flex;
+        align-items: center;
+            
+        p {
+          margin-top: 5px;
+          margin-bottom: 5px;
+          line-height: normal;
+          font-size: 15px;
+        }
+
+        button {
+          @include btn('50px');
+        }
+        span {
+          @include cancel();
+          font-weight: normal;
+
+        }
+      }
+
+   }
+
+   /* Main Content */
+
+   .content {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr auto;
+    max-width: 922px;
+    margin: auto;
+
+  }
+
+  /* Tasks */
